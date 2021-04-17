@@ -1,0 +1,102 @@
+								//////////////////////////////
+								//							//
+								//		DJANGO COMMANDS		//
+								//							//
+								//////////////////////////////
+
+	pip install Django
+
+	python -m django --version
+
+>> open PowerShell in target folder then run followings as need...
+
+	django-admin startproject project_name
+
+	cd folder_name/sub_folder_name(if any)
+
+	python manage.py makemigrations
+
+	python manage.py migrate
+
+	python manage.py runserver
+
+	python manage.py startapp app_name
+
+	tree /F
+
+	python manage.py createsuperuser
+
+
+								//////////////////////////////
+								//							//
+								//		DJANGO Syntaxes		//
+								//							//
+								//////////////////////////////
+
+>>add followings to app_name/settings.py to register your app(follow the last entry)
+
+	# Application definition
+
+	INSTALLED_APPS = [
+		'django.contrib.admin',
+		'django.contrib.auth',
+		'django.contrib.contenttypes',
+		'django.contrib.sessions',
+		'django.contrib.messages',
+		'django.contrib.staticfiles',
+		'app_name',
+	]
+
+	# Internationalization
+	# https://docs.djangoproject.com/en/3.2/topics/i18n/
+
+	LANGUAGE_CODE = 'en-us'
+
+	TIME_ZONE = 'Asia/Dhaka'
+
+>> add followings to app_name/vews.py
+
+	from django.http import HttpResponse
+
+	def home(request):
+		return HttpResponse("Hello World!!!")
+
+>> create a file urls.py under app_name add followings to app_name/urls.py
+
+	from django.urls import path
+	from . import views
+
+	urlpatterns = [
+		path("", views.home, name="home"),
+	]
+
+>> add followings to project_name/urls.py
+
+	from django.urls import path, include
+
+	urlpatterns = [
+		path('admin/', admin.site.urls),
+		path('', include("app_name.urls")),
+	]
+
+>>	Template rendering:	add followings to app_name/vews.py
+
+	from django.shortcuts import render
+	# from django.http import HttpResponse
+
+	def home(request):
+		# return HttpResponse("Hello World!!!")
+		return render(request, "app_name/index.html")
+
+>> add followings to app_name/settings.py to access other files with html
+	STATICFILES_DIRS = [
+		BASE_DIR / 'static'
+	]
+
+>> add followings to your html file to access other files with html
+	{% load static %}			// on line 1
+	{% static 'path' %}		// in href under double quote
+
+
+>> run Django server using above command the paste the following link to your browser and hit enter
+	http://127.0.0.1:8000/

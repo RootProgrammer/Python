@@ -1,0 +1,57 @@
+>> run following command in project path to generate installed library list 
+	pip freeze > requirements.txt
+	
+>> create zip file of project_name folder
+
+>> upload zip to https://www.pythonanywhere.com/user/user_name/files/home/user_name
+	*** user_name = user name of your account
+	
+>> open bash here https://www.pythonanywhere.com/user/user_name/consoles/19831416/
+
+>> run following commands to setup virtual environment
+	$ pwd
+	$ mkvirtualenv venv_name --python=/usr/bin/python3.x	// check your version for .x
+	$ unzip project_name.zip
+	$ dir
+	$ cd project_name
+	$ dir
+	$ pip install -r requirements.txt
+
+>> go to web from dashboard
+
+>> enter Source code path under Code /home/user_name/project_name
+
+>> open "WSGI configuration file" link under Code
+
+>> remove everything except DJANGO section
+
+>> uncomment followings in DJANGO section
+	# +++++++++++ DJANGO +++++++++++
+	# To use your own django app use code like this:
+	import os
+	import sys
+	#
+	## assuming your django settings file is at '/home/ZamaaN/mysite/mysite/settings.py'
+	## and your manage.py is is at '/home/ZamaaN/mysite/manage.py'
+	path = '/home/ZamaaN/personal_portfolio'
+	if path not in sys.path:
+		sys.path.append(path)
+	#
+	os.environ['DJANGO_SETTINGS_MODULE'] = 'personal_portfolio.settings'
+	#
+	## then:
+	from django.core.wsgi import get_wsgi_application
+	application = get_wsgi_application()
+
+>> enter Virtual environment path under Virtualenv /home/ZamaaN/.virtualenvs/portfolio
+
+>> enter Static files path under Static files /static/			/home/ZamaaN/personal_portfolio/staticfiles
+
+>> open settings.py then add followings
+	ALLOWED_HOSTS = ['*']		// before # Application definition
+	STATIC_ROOT = BASE_DIR / 'staticfiles'	// under STATIC_URL
+
+>> goto bash and run following command to collect static files
+	$ python manage.py collectstatic
+	
+>> exit from bash and you are ready to go!
