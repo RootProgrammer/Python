@@ -1,0 +1,164 @@
+								//////////////////////////////
+								//							//
+								//		DJANGO COMMANDS		//
+								//							//
+								//////////////////////////////
+
+	pip install Django
+
+	python -m django --version
+
+>> open PowerShell in target folder then run followings as need...
+
+	django-admin startproject project_name
+
+	cd folder_name/sub_folder_name(if any)
+
+	python manage.py makemigrations
+
+	python manage.py migrate
+
+	python manage.py runserver
+
+	python manage.py startapp app_name
+
+	tree /F
+
+	python manage.py createsuperuser
+
+
+								//////////////////////////////
+								//							//
+								//		DJANGO Syntaxes		//
+								//							//
+								//////////////////////////////
+
+>>add followings to app_name/settings.py to register your app(follow the last entry)
+
+	# Application definition
+
+	INSTALLED_APPS = [
+		'django.contrib.admin',
+		'django.contrib.auth',
+		'django.contrib.contenttypes',
+		'django.contrib.sessions',
+		'django.contrib.messages',
+		'django.contrib.staticfiles',
+		'app_name',
+	]
+
+	# Internationalization
+	# https://docs.djangoproject.com/en/3.2/topics/i18n/
+
+	LANGUAGE_CODE = 'en-us'
+
+	TIME_ZONE = 'Asia/Dhaka'
+
+//
+	>> add followings to app_name/vews.py
+
+		from django.http import HttpResponse
+
+		def home(request):
+			return HttpResponse("Hello World!!!")
+//
+
+>>	Template rendering:	add followings to app_name/vews.py
+
+	from django.shortcuts import render
+	# from django.http import HttpResponse
+
+	def home(request):
+		# return HttpResponse("Hello World!!!")
+		return render(request, "app_name/index.html")
+
+>> create a file urls.py under app_name add followings to app_name/urls.py
+
+	from django.urls import path
+	from . import views
+
+	urlpatterns = [
+		path("", views.home, name="home"),
+	]
+
+>> add followings to project_name/urls.py
+
+	from django.urls import path, include
+
+	urlpatterns = [
+		path('admin/', admin.site.urls),
+		path('', include("app_name.urls")),
+	]
+
+>> make static: add followings to app_name/settings.py to access other files with html
+	STATICFILES_DIRS = [
+		BASE_DIR / 'static'
+	]
+
+>> make static: add followings to your html file to access other files with html
+	{% load static %}			// on line 1
+	{% static 'path' %}		// in href under double quote
+
+>> form handling: add {% csrf_token %} form opening tag
+
+>> form handling: replace input/textarea with {{form.variable_name}}	// variable_name = name / email / subject / message / ...
+
+>> form handling: add followings to app_name/models.py
+	from datetime import *
+
+	# Create your models here.
+	class Contact(models.Model):
+		name = models.CharField(max_length=124)
+		email = models.CharField(max_length=124)
+		subject = models.CharField(max_length=124)
+		message = models.TextField(max_length=1124)
+		date = models.DateField(auto_now_add=True)
+
+		def __str__(self):
+			return self.name
+
+>> form handling: add followings to app_name/admin.py
+	from .models import Contact
+
+	# Register your models here.
+	admin.site.register(Contact)
+	admin.site.site_header = "Admin Your_Name"
+
+>> form handling: create a file forms.py under app_name add followings to app_name/forms.py
+	from django import forms
+	from .models import Contact
+
+	class ContactForm(forms.ModelForm):
+		class Meta:
+			model = Contact
+			fields = ['name', 'email', 'subject', 'message']
+			widgets = {
+				'name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter Your Name Here. Please enter at least 4 chars'}),
+				'email': forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Please enter a valid email'}),
+				'subject': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Please enter at least 8 chars of subject'}),
+				'message': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Please write something for Me'}),
+			}
+>> form handling: replace the codes of app_name/vews.py as following
+	from django.shortcuts import render, redirect
+	from django.views.decorators.csrf import csrf_protect
+	# from django.http import HttpResponse
+	# from datetime import datetime
+	from django.contrib import messages
+	from .models import Contact
+	from .forms import *
+
+	@csrf_protect # Decorator
+	def home(request):
+		form = ContactForm()
+		if request.method == "POST":
+			form = ContactForm(request.POST)
+			if form.is_valid():
+				form.save()
+				messages.success(request, 'Your Message Has Been Sent!')
+				return redirect('home')
+		context = {'form': form}
+		# return HttpResponse("Hello World!!!")
+		return render(request, "main_app/index.html", context)
+
+>> run Django server using above command the paste the following link to your browser and hit enter
+	http://127.0.0.1:8000/
