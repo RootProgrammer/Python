@@ -1,9 +1,8 @@
-								//////////////////////////////
-								//							//
-								//		DJANGO COMMANDS		//
-								//							//
-								//////////////////////////////
-
+								//////////////////////////////////////////////////
+								//						//
+								//		DJANGO COMMANDS			//
+								//						//
+								//////////////////////////////////////////////////
 	pip install Django
 
 	python -m django --version
@@ -27,11 +26,12 @@
 	python manage.py createsuperuser
 
 
-								//////////////////////////////
+								//////////////////////////////////////////////////////////
 								//							//
-								//		DJANGO Syntaxes		//
+								//			DJANGO Syntaxes			//
 								//							//
-								//////////////////////////////
+								//////////////////////////////////////////////////////////
+								
 
 >>add followings to app_name/settings.py to register your app(follow the last entry)
 
@@ -99,7 +99,7 @@
 	{% load static %}			// on line 1
 	{% static 'path' %}		// in href under double quote
 
->> form handling: add {% csrf_token %} form opening tag
+>> form handling: add {% csrf_token %} under form opening tag
 
 >> form handling: replace input/textarea with {{form.variable_name}}	// variable_name = name / email / subject / message / ...
 
