@@ -12,6 +12,17 @@
 	$ pwd
 	$ mkvirtualenv venv_name --python=/usr/bin/python3.x	// check your version for .x
 	$ unzip project_name.zip
+
+>> go to web from dashboard
+	> click on add a new web app
+	> click on next
+	> click on manual configuration
+	> selsct python version
+	> click on next
+
+>> go to web from dashboard and enter Virtual environment path under Virtualenv /home/ZamaaN/.virtualenvs/portfolio
+
+>> run following commands on bash
 	$ dir
 	$ cd project_name
 	$ dir
@@ -43,8 +54,6 @@
 	from django.core.wsgi import get_wsgi_application
 	application = get_wsgi_application()
 
->> enter Virtual environment path under Virtualenv /home/ZamaaN/.virtualenvs/portfolio
-
 >> enter Static files path under Static files /static/			/home/ZamaaN/personal_portfolio/staticfiles
 
 >> open settings.py then add followings
@@ -52,6 +61,12 @@
 	STATIC_ROOT = BASE_DIR / 'staticfiles'	// under STATIC_URL
 
 >> goto bash and run following command to collect static files
-	$ python manage.py collectstatic
+	$ python3 manage.py collectstatic
 	
 >> exit from bash and you are ready to go!
+
+>> create backup
+	$ zip -r /tmp/backup.zip /home/ZamaaN
+
+>> download backup from
+	https://www.pythonanywhere.com/user/ZamaaN/files/tmp
