@@ -1,0 +1,665 @@
+{% load static %}
+<!-- {% static 'path' %} -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	  
+    <!-- Website Title -->
+    <title>Gregory Ayon - Professional Full Stack Software Developer</title>
+    
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link href="{% static 'assets/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+	  
+    <!-- Font-Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+	  
+    <!-- Lightbox -->
+	  <link href="{% static 'assets/lightbox/css/lightbox.css' %}" rel="stylesheet">
+    
+    <!-- Text Rotator-->
+	  <link href="{% static 'assets/textrotator/simpletextrotator.css' %}" rel="stylesheet">
+	  
+    <!-- FlexSlider -->
+    <link href="{% static 'assets/flexslider/flexslider.css' %}" rel="stylesheet">
+	  
+    <!-- Theme Style -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+	  
+    <!-- Animations -->
+    <link href="{% static 'css/animate.css' %}" rel="stylesheet">
+	  
+    <!-- Custom Favicon -->
+	  <link href="{% static 'img/favicon.ico' %}" rel="shortcut icon" type="image/x-icon" /> 
+    
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="assets/html5shiv/html5shiv.js"></script>
+    <script src="assets/respond/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Retain Scroll Position on Page Reload -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function (event) {
+        var scrollPosition = sessionStorage.getItem('scrollPosition');
+        if (scrollPosition) {
+          window.scrollTo(0, scrollPosition);
+          sessionStorage.removeItem('scrollPosition');
+        }
+      });
+
+      window.addEventListener("beforeunload", function (e) {
+        sessionStorage.setItem('scrollPosition', window.scrollY);
+      });
+    </script>
+
+    <!-- =======================================================
+        * Template Name: Ayon_Protfolio - v1
+        * Author: ZamaaN
+        ======================================================== -->
+  </head>
+    <body id="top">
+      <!-- ****************************** Preloader ************************** -->
+      <div id="preloader"></div>
+
+	  	<!-- ==========================
+        HEADER SECTION 
+        =========================== -->
+        <header id="home">
+		    
+          <!-- creative menu -->
+            <div class="container-fluid">
+              <div class="row">
+                <div class="menu-wrap">
+				<nav class="menu">
+				    
+          <!-- Menu Links -->
+					<div class="icon-list">
+						<a href="#home"><i class="fa fa-fw fa-home"></i><span>Home</span></a>
+						<a href="#about"><i class="fa fa-fw fa-quote-left"></i><span>About</span></a>
+						<a href="#service"><i class="fa fa-fw fa-globe"></i><span>Service</span></a>
+						<a href="#portfolio"><i class="fas fa-file"></i><span>Portfolio</span></a>
+						<a href="#blog"><i class="fa fa-fw fa-rss"></i><span>Blog</span></a>
+						<a href="#contact"><i class="far fa-address-book"></i><span>Contact</span></a>
+					</div>
+				</nav>
+			    </div>
+			    <button class="menu-button" id="open-button"></button><!-- menu button -->
+              </div><!--/row-->
+            </div><!--/container-->
+		    
+            <!-- Header Image -->
+          <section class="hero" id="hero">
+            <div class="container">
+			  
+              <!-- Slider Button (don't edit!)-->
+              <div class="row">
+                <div class="col-md-12 text-right navicon">
+                  <a id="nav-toggle" class="nav_slide_button" href="#"><span></span></a>
+                </div>
+              </div>
+			  
+              <!-- HEADER HEADLINE -->
+              <div class="row">
+                <div class="col-md-8 col-md-offset-1 inner">
+                  <h1 class="animated fadeInDown">
+                    Gre<span style="color:#E04343;">G</span>ory<br/>
+                    <span>A<span style="color:#FFE800">y</span>on</span>
+                  </h1><!-- Title -->
+                  <h3 class="animated fadeInUp delay-05s"><span class="rotate">Full Stack Developer,Graphics Designer,Motion Graphics Designer</span></h3><!-- Text Rotator -->
+                </div>
+              </div>
+			  
+              <!-- Learn More Button -->
+              <div class="row">
+                <div class="col-md-6 col-md-offset-3 text-center">
+                  <a href="#about" class="scrollto wow fadeInUp delay-5s ">
+			            <p>SEE MORE</p>
+			            <p class="scrollto--arrow"><img src="{% static 'img/scroll-down.png' %}" alt="scroll down arrow"></p>
+			        </a>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- Header Image End -->
+        </header>
+		
+        <!-- ==========================
+        HEADER SECTION END  
+        =========================== -->
+		
+        <!-- ==========================
+        ABOUT SECTION  
+        =========================== -->
+        <section class="intro text-center section-padding color-bg" id="about">
+          <div class="container">
+		    
+            <!-- WELCOME TEXT -->
+            <div class="row">
+              <div class="col-md-8 col-md-offset-2 wp1">
+                <h1 class="arrow">A little <span>about</span> me</h1><!-- Headline -->
+				
+                <!-- about / welcome text -->
+                <p>Creative web app developer dedicated to developing and optimizing interactive, user-friendly, and feature-rich websites. Leverage analytical skills and strong attention to detail in order to deliver original and efficient web solutions, provide technical knowledge and expertise, build new websites from start to finish, and successfully manage a team of web developers. I would like to be a web app developer is a software designer or engineer who is involved in the development and design of web and/or network applications.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==========================
+        SERVICE SECTION 
+        =========================== -->
+        <section class="features text-center section-padding" id="service">
+          <div class="container">
+        
+            <!-- Headline -->
+            <div class="row">
+              <div class="col-md-12">
+                <h1 class="arrow">I do amazing things for clients</h1>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+          <div class="services">
+          
+            <!-- Service Box 1 -->
+            <div class="col-md-4 wp2 item">
+              <div class="icon">
+                <i class="fas fa-file-code"></i><!-- Icon -->
+              </div>
+              <h2>Full Stack Developer</h2><!-- Title -->
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada fames ac ante ipsum
+              primis in faucibus.</p><!-- Description -->
+            </div>
+          
+            <!-- Service Box 2 -->
+                  <div class="col-md-4 wp2 item delay-05s">
+                    <div class="icon">
+                      <i class="fas fa-pencil-ruler"></i><!-- Icon -->
+                    </div>
+                    <h2>Graphics Designer</h2><!-- Title -->
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada fames ac ante ipsum
+                    primis in faucibus.</p><!-- Description -->
+                  </div>
+          
+                  <!-- Service Box 3 -->
+                  <div class="col-md-4 wp2 item delay-1s">
+                    <div class="icon">
+                      <i class="fas fa-file-video"></i><!-- Icon -->
+                    </div>
+                    <h2>Motion Graphics Designer</h2><!-- Title -->
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada fames ac ante ipsum
+                    primis in faucibus.</p><!-- Description -->
+                  </div>
+          </div>
+                  <div class="clearfix"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+		<div class="container-fluid">
+		    
+      <!-- About 1 -->
+			<div class="row color-bg">
+				<div class="col-md-6 nopadding features-intro-img">
+					<div class="about-image" style="background-image:url({% static 'img/about1.png' %})"></div><!-- about image 1 -->
+				</div>
+				<div class="col-md-6 about-text">
+					<h6>Full Stack Developer</h6><!-- headline-->
+					<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p><br><!-- About Text 1 -->
+					<a href="index.html#team" class="weight-outline-btn">Read more</a><!-- read more button  -->			
+				</div>
+			</div>
+			
+      <!-- About 2 -->
+			<div class="row">
+				<div class="col-md-6 about-text">
+					<h6>Graphics Designer</h6><!-- Headline -->
+					<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p><br><!-- About Text 2 -->
+					<a href="index.html#team" class="weight-outline-btn">Read more</a>	<!-- read more button  -->				
+				</div>
+				<div class="col-md-6 nopadding features-intro-img">
+					<div class="about-image" style="background-image:url({% static 'img/about2.png' %})"></div><!-- about image 2 -->
+				</div>
+			</div>
+			
+      <!-- About 3 -->
+			<div class="row color-bg">
+				<div class="col-md-6 nopadding features-intro-img">
+					<div class="about-image" style="background-image:url({% static 'img/about3.png' %})"></div><!-- about image 3 -->
+				</div>
+				<div class="col-md-6 about-text">
+					<h6>Motion Graphics Designer</h6><!-- Headline-->
+					<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p><br><!-- About Text 3 -->
+					<a href="index.html#team" class="weight-outline-btn">Read more</a><!-- read more button  -->					
+				</div>
+			</div>
+		</div>
+		
+    <!-- ==========================
+        ABOUT SECTION END
+        =========================== -->	
+
+		
+		
+		
+		<!-- ==========================
+        PORTFOLIO SECTION
+    =========================== -->
+        <section class="swag text-center" id="portfolio">
+          <div class="container">
+		    
+            <!-- Headline -->
+            <div class="row">
+              <h1 class="arrow">
+                Recent <span>Porojects</span>
+              </h1>
+            </div>
+          </div>
+        </section>
+
+        <div class="container">
+          <div class="row row-offset-0">
+  				 
+          <!-- PORTFOLIO ITEM 1 -->
+          <div class="col-md-3 col-sm-6">
+              <div class="overlay-effect effects clearfix">
+                  <div class="img">
+                      <a href="{% static 'img/portfolio/portfolio-01-large.jpg' %}" data-lightbox="roadtrip" title="Project One - Lorem Ipsum"><img class="grayscale" src="{% static 'img/portfolio/portfolio-01-thumbnail.jpg' %}" alt="Portfolio Item"></a>
+                  </div>
+              </div>
+          </div>
+  	    <!-- PORTFOLIO ITEM END -->
+  	
+  	    
+        <!-- PORTFOLIO ITEM 2 -->
+          <div class="col-md-3 col-sm-6">
+              <div class="overlay-effect effects clearfix">
+                  <div class="img">
+                      <a href="{% static 'img/portfolio/portfolio-02-large.jpg' %}" data-lightbox="roadtrip" title="Project Two - Lorem Ipsum"><img class="grayscale" src="{% static 'img/portfolio/portfolio-02-thumbnail.jpg' %}" alt="Portfolio Item"></a>
+                  </div>
+              </div>
+          </div>
+  	    <!-- PORTFOLIO ITEM END -->
+  					  		
+        <!-- PORTFOLIO ITEM 3 -->
+          <div class="col-md-3 col-sm-6">
+              <div class="overlay-effect effects clearfix">
+                  <div class="img">
+                      <a href="{% static 'img/portfolio/portfolio-03-large.jpg' %}" data-lightbox="roadtrip" title="Project Three - Lorem Ipsum"><img class="grayscale" src="{% static 'img/portfolio/portfolio-03-thumbnail.jpg' %}" alt="Portfolio Item"></a>
+                  </div>
+              </div>
+          </div>
+  	    <!-- PORTFOLIO ITEM END -->
+  					  		
+        <!-- PORTFOLIO ITEM 4 -->
+          <div class="col-md-3 col-sm-6 ">
+              <div class="overlay-effect effects clearfix">
+                  <div class="img">
+                      <a href="{% static 'img/portfolio/portfolio-04-large.jpg' %}" data-lightbox="roadtrip" title="Project Four - Lorem Ipsum"><img class="grayscale" src="{% static 'img/portfolio/portfolio-04-thumbnail.jpg' %}" alt="Portfolio Item"></a>
+                  </div>
+              </div>
+          </div>
+  	    <!-- PORTFOLIO ITEM END -->
+  	             
+          <!-- PORTFOLIO ITEM 5 -->
+          <div class="col-md-3 col-sm-6 ">
+              <div class="overlay-effect effects clearfix">
+                  <div class="img">
+                      <a href="{% static 'img/portfolio/portfolio-05-large.jpg' %}" data-lightbox="roadtrip" title="Project Five - Lorem Ipsum"><img class="grayscale" src="{% static 'img/portfolio/portfolio-05-thumbnail.jpg' %}" alt="Portfolio Item"></a>
+                  </div>
+              </div>
+          </div>
+  	    <!-- PORTFOLIO ITEM END -->
+ 	    
+        <!-- PORTFOLIO ITEM 6 -->
+          <div class="col-md-3 col-sm-6">
+              <div class="overlay-effect effects clearfix">
+                  <div class="img">
+                      <a href="{% static 'img/portfolio/portfolio-06-large.jpg' %}" data-lightbox="roadtrip" title="Project Six - Lorem Ipsum"><img class="grayscale" src="{% static 'img/portfolio/portfolio-06-thumbnail.jpg' %}" alt="Portfolio Item"></a>
+                  </div>
+              </div>
+          </div>
+  	    <!-- PORTFOLIO ITEM END -->
+  					  		
+        <!-- PORTFOLIO ITEM 7 -->
+          <div class="col-md-3 col-sm-6">
+              <div class="overlay-effect effects clearfix">
+                  <div class="img">
+                      <a href="{% static 'img/portfolio/portfolio-07-large.jpg' %}" data-lightbox="roadtrip" title="Project Seven - Lorem Ipsum"><img class="grayscale" src="{% static 'img/portfolio/portfolio-07-thumbnail.jpg' %}" alt="Portfolio Item"></a>
+                  </div>
+              </div>
+          </div>
+  	    <!-- PORTFOLIO ITEM END -->  					
+  		
+        <!-- PORTFOLIO ITEM 8 -->
+          <div class="col-md-3 col-sm-6">
+              <div class="overlay-effect effects clearfix">
+                  <div class="img">
+                      <a href="{% static 'path' %}img/portfolio/portfolio-08-large.jpg" data-lightbox="roadtrip" title="Project Eight - Lorem Ipsum"><img class="grayscale" src="{% static 'img/portfolio/portfolio-08-thumbnail.jpg' %}" alt="Portfolio Item"></a>
+                  </div>
+              </div>
+          </div>
+  	    <!-- PORTFOLIO ITEM END -->
+        </div><!--/row-->
+      </div><!--/.container-->
+		
+      <!-- ==========================
+        PORTFOLIO SECTION END
+        =========================== -->
+
+		<!-- ==========================
+        CUSTOM SPACER
+        =========================== -->
+		<div class="spacer-cta text-center">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <a href="#contact" class="outline-btn">hire Roy D. Ayon</a>
+              </div>
+            </div>
+          </div>
+        </div>
+		
+        <!-- ==========================
+        CUSTOM SPACER END
+        =========================== -->
+
+    <!-- ==========================
+        BLOG SECTION 
+        =========================== -->
+    <section class="text-center section-padding" id="blog">
+          <div class="container">
+        
+            <!-- Headline -->
+        <div class="row">
+              <div class="col-md-12">
+                <h1 class="arrow">My <span>little</span> blog</h1>
+              </div>
+            </div><br><br>
+      
+            <!-- Blog Slider -->
+            <div class="row">
+              <div id="blogSlider">
+                <ul class="slides">
+                  <li>
+            
+                    <!-- Blog Entry 1 -->
+                    <div class="col-md-4 wp4">
+                      <div class="overlay-effect effects clearfix">
+                        <div class="img">
+                          <img src="{% static 'img/blog1.jpg' %}" class="grayscale" alt="Blog Item"><!-- Blog Image -->
+                        </div>
+                      </div>
+                      <br>
+                      <h2>Creative Minds</h2><!-- Headline -->
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricies nulla non metus pulvinar imperdiet. Praesent non adipiscing libero.</p><!-- Description-->
+                    </div>
+          
+                    <!-- Blog Entry 2 -->
+                    <div class="col-md-4 wp4 delay-05s">
+                      <div class="overlay-effect effects clearfix">
+                        <div class="img">
+                          <img src="{% static 'img/blog2.jpg' %}" class="grayscale" alt="Blog Item"><!-- Blog Image -->
+                        </div>
+                      </div>
+                      <br>
+                      <h2>Creative Hearts</h2><!-- Headline -->
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricies nulla non metus pulvinar imperdiet. Praesent non adipiscing libero.</p><!-- Description -->
+                    </div>
+          
+                    <!-- Blog Entry 3 -->
+                    <div class="col-md-4 wp4 delay-1s">
+                      <div class="overlay-effect effects clearfix">
+                        <div class="img">
+                          <img src="{% static 'img/blog3.jpg' %}"  class="grayscale" alt="Blog Item"><!-- Blog Image -->
+                        </div>
+                      </div>
+                      <br>
+                      <h2>Creative Ideas</h2><!-- Headline -->
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricies nulla non metus pulvinar imperdiet. Praesent non adipiscing libero.</p><!-- Description-->
+                    </div>
+                  </li>
+                  <li>
+            
+                    <!-- Blog Entry 4 -->
+                    <div class="col-md-4 wp4">
+                      <div class="overlay-effect effects clearfix">
+                        <div class="img">
+                          <img src="{% static 'img/blog1.jpg' %}" class="grayscale" alt="Blog Item"><!-- Blog Image -->
+                        </div>
+                      </div>
+                      <br>
+                      <h2>Creative Minds</h2><!-- Headline -->
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricies nulla non metus pulvinar imperdiet. Praesent non adipiscing libero.</p><!-- Description -->
+                    </div>
+          
+                    <!-- Blog Entry 5 -->
+                    <div class="col-md-4 wp4 delay-05s">
+                      <div class="overlay-effect effects clearfix">
+                        <div class="img">
+                          <img src="{% static 'img/blog2.jpg' %}" class="grayscale" alt="Blog Item"><!-- Blog Image -->
+                        </div>
+                      </div>
+                      <br>
+                      <h2>Creative Hearts</h2>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricies nulla non metus pulvinar imperdiet. Praesent non adipiscing libero.</p>
+                    </div>
+          
+                    <!-- Blog Entry 6 -->
+                    <div class="col-md-4 wp4 delay-1s">
+                      <div class="overlay-effect effects clearfix">
+                        <div class="img">
+                          <img src="{% static 'img/blog3.jpg' %}" class="grayscale" alt="Blog Item"><!-- Blog Image -->
+                        </div>
+                      </div>
+                      <br>
+                      <h2>Creative Ideas</h2><!-- Headline -->
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricies nulla non metus pulvinar imperdiet. Praesent non adipiscing libero.</p><!-- Description -->
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+    
+        <!-- ==========================
+        BLOG SECTION END
+        =========================== -->
+		
+        <!-- ==========================
+        CONTACT SECTION
+        =========================== -->
+        <section class="text-center section-padding contact-wrap" id="contact">
+		  
+          <!-- To Top Button -->
+          <a href="#top" class="up-btn"><i class="fa fa-chevron-up"></i></a>
+          <div class="container">
+		    
+            <!-- Headline -->
+            <div class="row">
+              <div class="col-md-12">
+                <h1 class="arrow">Drop <span>me</span> a line</h1>
+              </div>
+            </div>
+            <div class="row contact-details">
+			  
+              <!-- Adress Box -->
+              <div class="col-md-4">
+                <div class="dark-box box-hover">
+                  <h2><i class="fa fa-map-marker"></i><span>Address</span></h2>
+                  <p>Sector 7, Uttara, Dhaka, BD</p>
+                </div>
+              </div>
+			  
+              <!-- Phone Number Box -->
+              <div class="col-md-4">
+                <div class="dark-box box-hover">
+                  <h2><i class="fa fa-mobile"></i><span>Phone</span></h2>
+                  <p>+880 1795 09 5847</p>
+                </div>
+              </div>
+			  
+              <!-- E-Mail Box -->
+              <div class="col-md-4">
+                <div class="dark-box box-hover">
+                  <h2><i class="fa fa-paper-plane"></i><span>Email</span></h2>
+                  <p><a href="#">royayon229@gmail.com</a></p>
+                </div>
+              </div>
+            </div>
+			<div class="row">
+			  
+        <!-- Google Maps (Change your Settings below) -->
+			  <div class="col-md-6">
+			    <div id="googlemaps">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7297.048004896004!2d90.39241872438208!3d23.871030688120108!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c43cc3768dc1%3A0x8ab583ff502586f3!2sSector%207%2C%20Dhaka%201230!5e0!3m2!1sen!2sbd!4v1618167581607!5m2!1sen!2sbd"
+              frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+			  </div>
+			  
+        <!-- Contact Form -->
+			  <div class="col-md-6 contact">
+			     <form action="" method="post" role="form">
+            {% csrf_token %}
+				            
+            <!-- Name -->
+            <div class="row">
+                <div class="col-md-6">
+								    
+                  <!-- E-Mail -->
+                  <div class="form-group">
+                    <label for="name">Name</label>
+                    {{ form.name }}
+                  </div>
+                </div>
+              <div class="col-md-6">
+                      
+                <!-- Phone Number -->
+                <div class="form-group">
+                  <label for="name">E-Mail</label>
+                  {{ form.email }}
+                </div>
+              </div>
+            </div>
+							
+              <!-- Message Area -->
+              <div class="form-group">
+                <label for="name">Message</label>
+                {{ form.message }}
+              </div>
+
+              <!-- ======= Message Sent Alert ======= -->
+              <div class="mb-3">
+                <div class="container-fluid"">
+                  {% if messages %}
+                    {% for message in messages %}
+                  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    Thank You.<br><strong>{{ message }}</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  </div>
+                    {% endfor %}
+                  {% endif %}
+                </div>
+              </div>
+                                
+              <!-- Subtmit Button -->
+              <button type="submit" class="btn btn-send">
+                  Send message
+              </button>
+            </form>
+			  </div>
+			</div>
+			<br>
+			
+      <!-- Social Buttons - use font-awesome, past in what you want -->
+      <div class="row">
+        <div class="col-md-12">
+          <ul class="social-buttons">
+            <li><a href="#" class="social-btn"><i class="fas fa-basketball-ball"></i></a></li><!-- dribble -->
+            <li><a href="#" class="social-btn"><i class="fab fa-twitter-square"></i></a></li><!-- twitter -->
+            <li><a href="#" class="social-btn"><i class="fab fa-facebook-square"></i></a></li><!-- facebook -->
+            <li><a href="#" class="social-btn"><i class="fab fa-deviantart"></i></a></li><!-- deviantart -->
+            <li><a href="#" class="social-btn"><i class="fab fa-youtube-square"></i></a></li><!-- youtube -->
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+		<!-- ==========================
+        CONTACT SECTION END
+        =========================== -->
+		
+		<!-- ==========================
+        FOOTER SECTION
+        =========================== -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <p>All Rights Reserved. &copy; 2021 <a href="http://zamaan.pythonanywhere.com/">ZamaaN</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+		<!-- ==========================
+        FOOTER SECTION END
+        =========================== -->		
+	
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    
+    <!-- SmoothScroll -->           
+    <script type="text/javascript" src="{% static 'assets/smoothscroll/smoothscroll.js' %}"></script>
+    
+    <!-- Twitter Bootstrap -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script> -->
+    
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    <script src="{% static 'assets/bootstrap/js/bootstrap.min.js' %}"></script>
+	  
+    <!-- Waypoints -->
+	  <script src="{% static 'js/waypoints.min.js' %}"></script>
+    
+    <!-- classie.js -->
+	  <script src="{% static 'js/classie.js' %}"></script>
+    
+    <!-- FlexSlider -->
+    <script src="{% static 'assets/flexslider/jquery.flexslider.js' %}"></script>
+	  
+    <!-- Modernizr -->
+    <script src="{% static 'js/modernizr.js' %}"></script>
+	  
+    <!-- Text Rotator -->
+	  <script src="{% static 'assets/textrotator/jquery.simple-text-rotator.js' %}"></script>
+	  
+    <!-- Lightbox.js -->
+    <script src="{% static 'assets/lightbox/js/lightbox.min.js' %}"></script>
+    
+    <!-- Google Maps --> 
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDeKBBPJTG3v5w3cNPAgM6ZsJiPyL1mP_o&amp;sensor=false"></script>
+	  
+    <!-- Theme JavaScript Core -->
+	  <script src="{% static 'js/main.js' %}"></script>
+	  <script src="{% static 'js/script.js' %}"></script>
+	
+    <!-- TEXT ROTATOR SETTINGS -->
+    <script type="text/javascript">
+    $(".rotate").textrotator({
+      animation: "fade", // You can pick the way it animates when rotating through words. Options are dissolve (default), fade, flip, flipUp, flipCube, flipCubeUp and spin.
+      separator: ",", // If you don't want commas to be the separator, you can define a new separator (|, &, * etc.) by yourself using this field.
+      speed: 2000 // How many milliseconds until the next word show.
+    });
+    </script>
+  </body>
+</html>
