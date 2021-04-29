@@ -12,14 +12,13 @@ from pathlib import *
 import webbrowser
 
 class Django_tasks:
-    def take_input(self):
+    def __init__(self):
         project_name = input("Enter Your Project Name: ")
         self.project_name = project_name.replace(" ", "_")
         app_name = input("Enter Your App Name: ")
         self.app_name = app_name.replace(" ", "_")
 
     def create_project(self):
-        # base_directory = path.dirname(path.realpath(__file__))
         self.base_directory = Path(__file__).parent.absolute()
         self.project_path = self.base_directory / self.project_name
         if not self.project_path.is_dir():
@@ -55,14 +54,13 @@ class Django_tasks:
         webbrowser.open("http://127.0.0.1:8000/")
         os.system("python manage.py runserver")
 
+if __name__=='__main__':
+    print("\t\t\t///////////////////////////////////////////\n\t\t\t///\t\t\t\t\t///\n\t\t\t///\t  Django PROJECT CREATION\t///\n\t\t\t///\tVersion 1.2, Author: ZamaaN\t///\n\t\t\t///\t\t\t\t\t///\n\t\t\t///////////////////////////////////////////\n")
 
-print("\t\t\t///////////////////////////////////////////\n\t\t\t///\t\t\t\t\t///\n\t\t\t///\t  Django PROJECT CREATION\t///\n\t\t\t///\tVersion 1.2, Author: ZamaaN\t///\n\t\t\t///\t\t\t\t\t///\n\t\t\t///////////////////////////////////////////\n")
+    task = Django_tasks()
 
-task = Django_tasks()
-
-task.take_input()
-task.create_project()
-task.create_app()
-task.edit_settings()
-task.check_path()
-task.run_django_server()
+    task.create_project()
+    task.create_app()
+    task.edit_settings()
+    task.check_path()
+    task.run_django_server()
