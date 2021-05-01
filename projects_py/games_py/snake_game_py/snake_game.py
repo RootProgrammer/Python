@@ -139,7 +139,7 @@ class Game:
 
                 raise 'Game Over!'
 
-        #? Ssnake hit the boundries of the window
+        #? Snake hit the boundries of the window
         if not (0 <= self.snake.snake_x[0] <= 1102 and 0 <= self.snake.snake_y[0] <= 786):
             self.play_sound('crash')
             raise "Game Over!"
