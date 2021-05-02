@@ -87,9 +87,13 @@ class Game:
         self.snake = Snake(self.window_surface, 1)
         self.snake.draw_snake()
         self.food = Food(self.window_surface)
-        self.food.draw_food()
+        
+        #? Food appears over snake.
+        for positon in range(self.snake.snake_size):
+            if self.is_hit(self.food.food_x, self.food.food_y, self.snake.snake_x[positon], self.snake.snake_y[positon]):
+                self.food.draw_food()
 
-    def is_eten(self, x1, y1, x2, y2):
+    def is_hit(self, x1, y1, x2, y2):
         if x1 >= x2 and x1 < x2 + object_size:
             if y1 >= y2 and y1 < y2 + object_size:
                 return True
@@ -105,7 +109,7 @@ class Game:
         sound_directory = f'resources/{sound_name}.mp3'
         full_ding_directory = base_directory / sound_directory
         pygame.mixer.music.load(full_ding_directory)
-        pygame.mixer.music.play()
+        pygame.mixer.music.play(-1)
     
     def play_sound(self, sound_name):
         sound_directory = f'resources/{sound_name}.mp3'
@@ -127,18 +131,17 @@ class Game:
         pygame.display.flip()
 
         #? Snake eat food.
-        if self.is_eten(self.snake.snake_x[0], self.snake.snake_y[0], self.food.food_x, self.food.food_y):
+        if self.is_hit(self.snake.snake_x[0], self.snake.snake_y[0], self.food.food_x, self.food.food_y):
             self.play_sound('ding')
             self.snake.increase_snake_size()
             self.food.move_food()
 
         #? Snake eat itself.
         for positon in range(1, self.snake.snake_size):
-            if self.is_eten(self.snake.snake_x[0], self.snake.snake_y[0], self.snake.snake_x[positon], self.snake.snake_y[positon]):
+            if self.is_hit(self.snake.snake_x[0], self.snake.snake_y[0], self.snake.snake_x[positon], self.snake.snake_y[positon]):
                 self.play_sound('crash')
-
                 raise 'Game Over!'
-
+        
         #? Snake hit the boundries of the window
         if not (0 <= self.snake.snake_x[0] <= 1102 and 0 <= self.snake.snake_y[0] <= 786):
             self.play_sound('crash')
@@ -200,7 +203,6 @@ class Game:
                 self.reset()
             
             time.sleep(0.24)
-
 
 if __name__ == '__main__':
     game = Game()
