@@ -1,8 +1,8 @@
 import pygame
 from pygame.locals import *
 from pathlib import *
-from resources_and_modules import snake
-from resources_and_modules import food
+from resources_and_modules import snake_control
+from resources_and_modules import food_control
 import time
 
 base_directory = Path(__file__).parent.absolute()
@@ -18,9 +18,9 @@ class Game:
         self.play_background_music('bg_music_1')
 
         self.window_surface = pygame.display.set_mode((1102, 786))
-        self.snake = snake.Snake(self.window_surface, 1)
+        self.snake = snake_control.Snake(self.window_surface, 1)
         self.snake.draw_snake()
-        self.food = food.Food(self.window_surface)
+        self.food = food_control.Food(self.window_surface)
 
         #? Food appears over snake.
         for positon in range(self.snake.snake_size):
@@ -96,8 +96,8 @@ class Game:
         pygame.mixer.music.pause()
 
     def reset(self):
-        self.snake = snake.Snake(self.window_surface, 1)
-        self.food = food.Food(self.window_surface)
+        self.snake = snake_control.Snake(self.window_surface, 1)
+        self.food = food_control.Food(self.window_surface)
 
     def run(self):
         running = True
